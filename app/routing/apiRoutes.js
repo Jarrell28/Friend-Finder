@@ -9,14 +9,15 @@ router.use(function timeLog(req, res, next) {
     next();
 })
 
-
-
 router.get("/api/friends", function (req, res) {
     res.json(friends);
 });
 
 router.post("/api/friends", function (req, res) {
     // res.sendFile(path.join(__dirname, "reserve.html"));
+    friends.push(req.body);
+
+    console.log(req.body);
 });
 
 module.exports = router;

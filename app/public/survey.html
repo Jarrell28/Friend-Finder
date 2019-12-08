@@ -16,7 +16,7 @@
         <hr>
 
         <h3 class="mb-3">About You</h3>
-        <form action="">
+        <form action="" id="survey-form">
             <div class="form-group">
                 <label for="name" class="h5">Name(Required)</label>
                 <input type="text" class="form-control" id="name" required>
@@ -141,6 +141,39 @@
             <button type="submit" class="btn btn-primary btn-block my-4">Submit</button>
         </form>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script>
+
+        $("#survey-form").on("submit", function (e) {
+            e.preventDefault();
+
+            var q1 = parseInt($("#q1").val());
+            var q2 = parseInt($("#q2").val());
+            var q3 = parseInt($("#q3").val());
+            var q4 = parseInt($("#q4").val());
+            var q5 = parseInt($("#q5").val());
+            var q6 = parseInt($("#q6").val());
+            var q7 = parseInt($("#q7").val());
+            var q8 = parseInt($("#q8").val());
+            var q9 = parseInt($("#q9").val());
+            var q10 = parseInt($("#q10").val());
+
+            var obj = {
+                name: $("#name").val(),
+                photo: $("#photo").val(),
+                scores: [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10]
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "/api/friends",
+                data: obj
+            })
+        })
+
+    </script>
 
 </body>
 
