@@ -29,7 +29,7 @@
 
             <h3>Question 1</h3>
             <p>Your mind is always buzzing with unexplored ideas and plans.</p>
-            <select name="q1" id="q1">
+            <select class="form-control" name="q1" id="q1">
                 <option value="" selected>Select an Option</option>
                 <option value="1">1(Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -40,7 +40,7 @@
 
             <h3 class="mt-4">Question 2</h3>
             <p>Generally speaking, you rely more on your experience than your imagination.</p>
-            <select name="q2" id="q2">
+            <select class="form-control" name="q2" id="q2">
                 <option value="" selected>Select an Option</option>
                 <option value="1">1(Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -51,7 +51,7 @@
 
             <h3 class="mt-4">Question 3</h3>
             <p>You find it easy to stay relaxed and focused even when there is some pressure.</p>
-            <select name="q3" id="q3">
+            <select class="form-control" name="q3" id="q3">
                 <option value="" selected>Select an Option</option>
                 <option value="1">1(Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -62,7 +62,7 @@
 
             <h3 class="mt-4">Question 4</h3>
             <p>You rarely do something just out of sheer curiosity.</p>
-            <select name="q4" id="q4">
+            <select class="form-control" name="q4" id="q4">
                 <option value="" selected>Select an Option</option>
                 <option value="1">1(Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -73,7 +73,7 @@
 
             <h3 class="mt-4">Question 5</h3>
             <p>People can rarely upset you.</p>
-            <select name="q5" id="q5">
+            <select class="form-control" name="q5" id="q5">
                 <option value="" selected>Select an Option</option>
                 <option value="1">1(Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -84,7 +84,7 @@
 
             <h3 class="mt-4">Question 6</h3>
             <p>It is often difficult for you to relate to other people’s feelings.</p>
-            <select name="q6" id="q6">
+            <select class="form-control" name="q6" id="q6">
                 <option value="" selected>Select an Option</option>
                 <option value="1">1(Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -95,7 +95,7 @@
 
             <h3 class="mt-4">Question 7</h3>
             <p>In a discussion, truth should be more important than people’s sensitivities.</p>
-            <select name="q7" id="q7">
+            <select class="form-control" name="q7" id="q7">
                 <option value="" selected>Select an Option</option>
                 <option value="1">1(Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -106,7 +106,7 @@
 
             <h3 class="mt-4">Question 8</h3>
             <p>You rarely get carried away by fantasies and ideas.</p>
-            <select name="q8" id="q8">
+            <select class="form-control" name="q8" id="q8">
                 <option value="" selected>Select an Option</option>
                 <option value="1">1(Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -118,7 +118,7 @@
             <h3 class="mt-4">Question 9</h3>
             <p>You think that everyone’s views should be respected regardless of whether they are supported by facts or
                 not.</p>
-            <select name="q9" id="q9">
+            <select class="form-control" name="q9" id="q9">
                 <option value="" selected>Select an Option</option>
                 <option value="1">1(Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -129,7 +129,7 @@
 
             <h3 class="mt-4">Question 10</h3>
             <p>You feel more energetic after spending time with a group of people.</p>
-            <select name="q10" id="q10">
+            <select class="form-control" name="q10" id="q10">
                 <option value="" selected>Select an Option</option>
                 <option value="1">1(Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -142,11 +142,45 @@
         </form>
 
         <hr>
-        <a href="/api/friends">API Friends List</a>
+        <a href="/api/friends" class="d-inline-block mb-3">API Friends List</a>
+
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary d-none" data-toggle="modal" data-target="#modal" id="modal-button">
+            Launch demo modal
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalLabel">Best Match</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <p class="text-center h4"></p>
+                        <img src="" alt="" style="width: 150px; height: auto">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+
     <script>
 
         $("#survey-form").on("submit", function (e) {
@@ -174,7 +208,9 @@
                 url: "/api/friends",
                 data: obj,
                 success: function (data) {
-                    console.log(data);
+                    $(".modal-body p").html(data.name);
+                    $(".modal-body img").attr("src", data.photo);
+                    $("#modal-button").trigger("click");
                 }
             })
         })
