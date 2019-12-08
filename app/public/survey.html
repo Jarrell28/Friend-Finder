@@ -140,6 +140,9 @@
 
             <button type="submit" class="btn btn-primary btn-block my-4">Submit</button>
         </form>
+
+        <hr>
+        <a href="/api/friends">API Friends List</a>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -169,7 +172,10 @@
             $.ajax({
                 type: "POST",
                 url: "/api/friends",
-                data: obj
+                data: obj,
+                success: function (data) {
+                    console.log(data);
+                }
             })
         })
 

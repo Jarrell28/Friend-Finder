@@ -14,10 +14,33 @@ router.get("/api/friends", function (req, res) {
 });
 
 router.post("/api/friends", function (req, res) {
-    // res.sendFile(path.join(__dirname, "reserve.html"));
+
+    var newScore = req.body.scores;
+
+    var closeFriend;
+    var totalDifference = Number.MAX_SAFE_INTEGER;
+    var tempDifference = 0;
+
+    friends.forEach(function (friend) {
+        var score = friend.scores;
+        tempDifference = 0;
+
+        for (var i = 0; i < score.length; i++) {
+            if (score[i] !== newScore[i]) {
+                var difference = Math.abs(score[i] - newScore[i]);
+                tempDifference += difference;
+            }
+        }
+
+        if (tempDifference < totalDifference) {
+            totalDifference = tempDifference;
+            closeFriend = friend;
+        }
+    })
     friends.push(req.body);
 
-    console.log(req.body);
+    console.log(closeFriend);
+    res.send(closeFriend);
 });
 
 module.exports = router;
